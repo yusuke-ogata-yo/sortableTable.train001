@@ -6,6 +6,11 @@
   let tbody = document.querySelector('tbody');
   let i;
 
+  /**
+   * Rebuilde a talbe.
+   *
+   * @param {Array} rows An array of a row of 
+   */
   function rebuildTbody( rows ) {
     let tbody = document.querySelector('tbody');
     let i;
@@ -18,6 +23,11 @@
     }
   }
 
+  /**
+   * Update tabel header name class.
+   *
+   * @param {Array} th An array of header row of a table.
+   */
   function updateClassName( th ) {
     let i;
 
@@ -27,6 +37,15 @@
     th.className = sortOrder === 1 ? 'asc' : 'dasc';
   }
 
+  /**
+   * Compare funciton
+   *
+   * @param {string/integer} a A value of a table cell
+   * @param {string/integer} b A value of a table cell
+   * @param {integer} col column nubmer
+   * @param {string} type "string" or "number"
+   * @returns {integer} 1 is that a is bigger than b.
+   */
   function compare( a, b, col, type ) {
     let _a = a.children[col].textContent;
     let _b = b.children[col].textContent;
@@ -47,6 +66,12 @@
     return 0;
   }
 
+  /**
+   * Sort rows.
+   *
+   * @param {Array} th An array of table rows.
+   * @returns {Array} Sorted table rows.
+   */
   function sortRows( th ) {
     let rows = Array.prototype.slice.call(document.querySelectorAll('tbody > tr'));
     let col = th.cellIndex;
@@ -59,6 +84,10 @@
     return rows;
   }
 
+  /**
+   * Sort rows.
+   *
+   */
   function setup() {
     for( i = 0; i < ths.length; i++ ) {
       ths[i].addEventListener('click', function() {
