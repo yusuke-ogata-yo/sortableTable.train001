@@ -70,7 +70,7 @@
    * Sort rows.
    *
    * @param {Array} th An array of table rows.
-   * @returns {Array} Sorted table rows.
+  * @returns {Array} Sorted table rows.
    */
   function sortRows( th ) {
     let rows = Array.prototype.slice.call(document.querySelectorAll('tbody > tr'));
